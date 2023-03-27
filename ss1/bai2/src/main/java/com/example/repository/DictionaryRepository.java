@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DictionaryRepositoryImpl implements IDictionaryRepository{
+public class DictionaryRepository implements IDictionaryRepository{
     private static Map<Integer, Dictionary> dictionaryMap = new HashMap<>();
 
     static {

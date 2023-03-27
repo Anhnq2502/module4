@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.service.ConverterServiceImpl;
+import com.example.service.ConverterService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CurrencyConverterApp {
-    private ConverterServiceImpl service = new ConverterServiceImpl();
+    private ConverterService service = new ConverterService();
 
     @GetMapping("/converter")
     public String index() {

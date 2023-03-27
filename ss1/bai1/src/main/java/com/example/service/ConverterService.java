@@ -1,7 +1,7 @@
 package com.example.service;
 
 
-public class ConverterServiceImpl implements IConverterService {
+public class ConverterService implements IConverterService {
 
     @Override
     public double converter(double usd, double rate) {

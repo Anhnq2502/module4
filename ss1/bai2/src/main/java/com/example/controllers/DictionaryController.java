@@ -1,7 +1,7 @@
 package com.example.controllers;
 
 import com.example.models.Dictionary;
-import com.example.services.DictionaryServiceImpl;
+import com.example.services.DictionaryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,7 @@ import java.util.List;
 
 @Controller
 public class DictionaryController {
-    private DictionaryServiceImpl dictionaryService = new DictionaryServiceImpl();
+    private DictionaryService dictionaryService = new DictionaryService();
 
     @GetMapping("/search")
     public String search() {
