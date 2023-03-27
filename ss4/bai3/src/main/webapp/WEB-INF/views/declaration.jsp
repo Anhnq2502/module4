@@ -66,16 +66,28 @@
             <h4>Thông tin đi lại(*)</h4>
         </div>
         <div class="row">
-            <div class="form-group">
-                <input type="checkbox" value="Tàu bay">
-                <input type="radio" value="Tàu thuyền">
-                <input type="radio" value="Ô tô">
-                <input type="radio" value="Khác (Ghi rõ)">
+            <div class="form-select-button">
+                <input type="radio" value="1" id="radio1">
+                <label for="radio1">Tàu bay</label>
+                <input type="radio" value="T2" id="radio2">
+                <label for="radio2">Tàu thuyền</label>
+                <input type="radio" value="3" id="radio3">
+                <label for="radio3">Ô tô</label>
+                <input type="radio" value="4" id="radio4">
+                <label for="radio4">Khác (Ghi rõ)</label>
             </div>
         </div>
         <div class="row">
             <div class="col-6">
                 <h4>Số hiệu phương tiện</h4>
+            </div>
+            <div class="col-6">
+                <h4>Số ghế</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="text" name="vehicle" placeholder="VD: VN123">
             </div>
         </div>
     </div>

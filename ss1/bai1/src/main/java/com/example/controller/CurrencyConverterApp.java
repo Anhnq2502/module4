@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CurrencyConverterApp {
-    ConverterServiceImpl service = new ConverterServiceImpl();
+    private ConverterServiceImpl service = new ConverterServiceImpl();
 
     @GetMapping("/converter")
     public String index() {
