@@ -15,20 +15,20 @@ public class DictionaryController {
     private DictionaryServiceImpl dictionaryService = new DictionaryServiceImpl();
 
     @GetMapping("/search")
-    public String search(){
+    public String search() {
         return "/index";
     }
 
-    @PostMapping("result")
-    public String meaning(@RequestParam String keyword, Model model){
+    @PostMapping("/result")
+    public String meaning(@RequestParam String keyword, Model model) {
         List<Dictionary> dictionaries = this.dictionaryService.findAll();
-        for (int i = 0; i < dictionaries.size(); i++){
-            if (keyword.equalsIgnoreCase(dictionaries.get(i).getEn())){
+        for (int i = 0; i < dictionaries.size(); i++) {
+            if (keyword.equalsIgnoreCase(dictionaries.get(i).getEn())) {
                 model.addAttribute("word", dictionaries.get(i).getVn());
                 model.addAttribute("key", keyword);
                 return "/mean";
             }
         }
-        return "mean";
+        return "/mean";
     }
 }
