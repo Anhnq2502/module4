@@ -17,7 +17,7 @@ public class CurrencyConverterApp {
     }
 
     @PostMapping("/usd")
-    public String submit(@RequestParam(name = "usd", defaultValue = "0") float usd, @RequestParam(name = "rate", defaultValue = "0") float rate, Model model) {
+    public String submit(@RequestParam(name = "usd", defaultValue = "0") double usd, @RequestParam(name = "rate", defaultValue = "0") double rate, Model model) {
         model.addAttribute("result1", service.converter(usd, rate));
         return "/submit";
     }
