@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.service.CalculatorService;
+import com.example.service.impl.CalculatorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +31,6 @@ public class Calculator {
             modelMap.addAttribute("number2", number2);
             modelMap.addAttribute("calcul", calcul);
             modelMap.addAttribute("result", service.calculator(number1, number2, result, calcul));
-
         }
         return "index";
     }
