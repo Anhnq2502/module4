@@ -18,13 +18,12 @@ public class MailBoxController {
     @GetMapping("/index")
     String index(Model model, @RequestParam(name = "language", required = false) String language,
                  @RequestParam(name = "pageSize", required = false) Integer pageSize,
-                 @RequestParam(name = "spamsFilter", required = false) String spamsFilter,
+                 @RequestParam(name = "spamsFilter", required = false) boolean spamsFilter,
                  @RequestParam(name = "signature", required = false) String signature) {
         MailBox mailBox = new MailBox(language, pageSize, spamsFilter, signature);
         model.addAttribute("mailBox", mailBox);
         return "/index";
     }
-
     @GetMapping("/update")
     String showPageUpdate(Model model) {
         model.addAttribute("mailBox", new MailBox());

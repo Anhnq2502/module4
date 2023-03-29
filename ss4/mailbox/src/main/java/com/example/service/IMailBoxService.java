@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface IMailBoxService {
-    public String[] languages();
+    String[] languages();
 
-    public Integer[] pageSizes();
+    Integer[] pageSizes();
 }

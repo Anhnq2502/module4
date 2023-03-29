@@ -1,15 +1,15 @@
 package com.example.model;
 
 public class MailBox {
-    String language;
-    Integer pageSize;
-    String spamsFilter;
-    String signature;
+    private String language;
+    private Integer pageSize;
+    private boolean spamsFilter;
+    private String signature;
 
     public MailBox() {
     }
 
-    public MailBox(String language, Integer pageSize, String spamsFilter, String signature) {
+    public MailBox(String language, Integer pageSize, boolean spamsFilter, String signature) {
         this.language = language;
         this.pageSize = pageSize;
         this.spamsFilter = spamsFilter;
@@ -32,11 +32,11 @@ public class MailBox {
         this.pageSize = pageSize;
     }
 
-    public String getSpamsFilter() {
+    public boolean isSpamsFilter() {
         return spamsFilter;
     }
 
-    public void setSpamsFilter(String spamsFilter) {
+    public void setSpamsFilter(boolean spamsFilter) {
         this.spamsFilter = spamsFilter;
     }
 

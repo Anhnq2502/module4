@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IMailBoxRepository {
-    public String[] languages();
+    String[] languages();
 
-    public Integer[] pageSizes();
+    Integer[] pageSizes();
 }
