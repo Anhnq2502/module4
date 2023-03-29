@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public class Calculator {
     final
-    CalculatorService service;
+     private CalculatorService service;
 
     public Calculator(CalculatorService service) {
         this.service = service;
