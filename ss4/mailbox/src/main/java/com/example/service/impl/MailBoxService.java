@@ -1,6 +1,7 @@
-package com.example.service;
+package com.example.service.impl;
 
-import com.example.repository.MailBoxRepository;
+import com.example.repository.impl.MailBoxRepository;
+import com.example.service.IMailBoxService;
 import org.springframework.stereotype.Service;
 
 @Service

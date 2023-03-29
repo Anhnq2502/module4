@@ -1,5 +1,6 @@
-package com.example.repository;
+package com.example.repository.impl;
 
+import com.example.repository.IMailBoxRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

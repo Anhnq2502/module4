@@ -1,7 +1,7 @@
 package com.example.controller;
 
 import com.example.model.MailBox;
-import com.example.service.MailBoxService;
+import com.example.service.impl.MailBoxService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
