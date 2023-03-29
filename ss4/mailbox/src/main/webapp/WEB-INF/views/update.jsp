@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,47 +14,42 @@
 <body>
 <h1>Setting</h1>
 <br>
-<form action="">
+<form:form action="/index" method="get" modelAttribute="mailBox">
     <div class="row">
         <div class="col-3"><h3>Languages</h3></div>
         <div class="col-6">
-            <select name="lg" id="lg" style="width: 32%">
-                <option value="en">English</option>
-                <option value="vi">Vietnamese</option>
-                <option value="jp">Japanese</option>
-                <option value="cn">Chinese</option>
-            </select>
+            <form:select path="language" cssStyle="width: 32%">
+                    <form:options items = "${languages}"></form:options>
+            </form:select>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-3"><h3>Page Size:</h3></div>
         <div class="col-6">
-            <select name="size" id="size">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-            </select>
+            <form:select path="pageSize">
+                <form:options items="${pageSizes}"></form:options>
+            </form:select>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-3"><h3>Spams Filter:</h3></div>
         <div class="col-6">
-            <input type="checkbox" value="Enable"> Enable spams filter
+            <input type="checkbox" name="spamsFilter" value="Enable"> Enable spams filter
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-3"><h3>Signature</h3></div>
         <div class="col-6">
-            <textarea name="signature" id="sg" cols="30" rows="5"></textarea>
+            <form:textarea path="signature" cols="30" rows="5"></form:textarea>
         </div>
     </div>
-</form>
+    <div class="row">
+        <div><button type="submit">Save</button></div>
+    </div>
+</form:form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>

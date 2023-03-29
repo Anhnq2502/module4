@@ -2,14 +2,14 @@ package com.example.model;
 
 public class MailBox {
     String language;
-    int pageSize;
+    Integer pageSize;
     String spamsFilter;
     String signature;
 
     public MailBox() {
     }
 
-    public MailBox(String language, int pageSize, String spamsFilter, String signature) {
+    public MailBox(String language, Integer pageSize, String spamsFilter, String signature) {
         this.language = language;
         this.pageSize = pageSize;
         this.spamsFilter = spamsFilter;
@@ -24,11 +24,11 @@ public class MailBox {
         this.language = language;
     }
 
-    public int getPageSize() {
+    public Integer getPageSize() {
         return pageSize;
     }
 
-    public void setPageSize(int pageSize) {
+    public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
 
