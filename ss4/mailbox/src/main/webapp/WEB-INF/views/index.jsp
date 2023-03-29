@@ -13,34 +13,34 @@
 </head>
 <body>
 <form:form action="/update" method="get" modelAttribute="mailBox">
-  <div class="row">
-    <div class="col-3">
-      <h3>Languages</h3>
-      <p>${mailBox.language}</p></div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-3">
-      <h3>Page Size:</h3>
-      <p>${mailBox.pageSize}</p></div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-3">
-      <h3>Spams Filter:</h3>
-      <p>${mailBox.spamsFilter}</p></div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-3">
-      <h3>Signature</h3>
-      <p>${mailBox.signature}</p></div>
-  </div>
-  <div class="row">
-    <div class="col-3">
-    <button type="submit">Update</button>
+    <div class="row">
+        <div class="col-3">
+            <h3>Languages</h3>
+            <p>${mailBox.language}</p></div>
     </div>
-  </div>
+    <br>
+    <div class="row">
+        <div class="col-3">
+            <h3>Page Size:</h3>
+            <p>${mailBox.pageSize}</p></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-3">
+            <h3>Spams Filter:</h3>
+            <p>${mailBox.spamsFilter}</p></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-3">
+            <h3>Signature</h3>
+            <p>${mailBox.signature}</p></div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <button type="submit">Update</button>
+        </div>
+    </div>
 </form:form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

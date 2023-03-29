@@ -19,7 +19,7 @@
         <div class="col-3"><h3>Languages</h3></div>
         <div class="col-6">
             <form:select path="language" cssStyle="width: 32%">
-                    <form:options items = "${languages}"></form:options>
+                <form:options items="${languages}"></form:options>
             </form:select>
         </div>
     </div>
@@ -47,7 +47,9 @@
         </div>
     </div>
     <div class="row">
-        <div><button type="submit">Save</button></div>
+        <div>
+            <button type="submit">Save</button>
+        </div>
     </div>
 </form:form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
