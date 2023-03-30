@@ -19,4 +19,29 @@ public class ProductService implements IProductService {
     public List<Product> findAll() {
         return productRepository.findAll();
     }
+
+    @Override
+    public void save(Product product) {
+        productRepository.save(product);
+    }
+
+    @Override
+    public void update(Integer productID,Product product) {
+        productRepository.update(productID,product);
+    }
+
+    @Override
+    public Product findByName(String productName) {
+        return productRepository.findByName(productName);
+    }
+
+    @Override
+    public void delete(Integer productID) {
+        productRepository.delete(productID);
+    }
+
+    @Override
+    public Product findById(Integer productID) {
+        return productRepository.findById(productID);
+    }
 }

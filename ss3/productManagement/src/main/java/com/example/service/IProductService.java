@@ -5,5 +5,10 @@ import com.example.model.Product;
 import java.util.List;
 
 public interface IProductService {
-    public List<Product> findAll();
+    List<Product> findAll();
+    void save(Product product);
+    void update(Integer productID,Product product);
+    Product findByName(String productName);
+    void delete(Integer productID);
+    Product findById(Integer productID);
 }
