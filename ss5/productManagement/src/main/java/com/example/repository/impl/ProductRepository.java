@@ -3,12 +3,8 @@ package com.example.repository.impl;
 import com.example.model.Product;
 import com.example.repository.BaseRepository;
 import com.example.repository.IProductRepository;
-import org.hibernate.Session;
-import org.hibernate.annotations.NamedQuery;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityTransaction;
-import javax.persistence.Query;
 import java.util.*;
 
 @Repository
@@ -30,12 +26,14 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void update(Integer productID, Product product) {
-        Session session = null;
-        Query query = session.createQuery("update Product set productName = :productName, productPrice = :productPrice, productDetail = :productDetail where productID = :productID");
-        query.setParameter("productName", product.getProductName());
-        query.setParameter("productPrice",product.getProductPrice());
-        query.setParameter("productDetail",product.getProductDetail());
-        session.update(product);
+        EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
+        entityTransaction.begin();
+        Product product1 = findById(productID);
+        product1.setProductName(product.getProductName());
+        product1.setProductPrice(product.getProductPrice());
+        product1.setProductDetail(product.getProductDetail());
+        BaseRepository.entityManager.merge(product1);
+        entityTransaction.commit();
     }
 
     @Override
@@ -46,8 +44,11 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void delete(Integer productID) {
-        Product product = BaseRepository.entityManager.find(Product.class,productID);
+        EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
+        entityTransaction.begin();
+        Product product = findById(productID);
         BaseRepository.entityManager.remove(product);
+        entityTransaction.commit();
     }
 
     @Override
