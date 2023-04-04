@@ -22,7 +22,6 @@
     <thread>
         <tr>
             <td>STT</td>
-            <td>ID</td>
             <td>Author</td>
             <td>Title</td>
             <td>Category</td>
@@ -32,7 +31,6 @@
     </thread>
     <tr th:each="blog,bl : ${blogs}">
         <td th:text="${bl.count}"></td>
-        <td th:text="${blog.getId()}"></td>
         <td th:text="${blog.getAuthor()}"></td>
         <td th:text="${blog.getTitle()}"></td>
         <td th:text="${blog.category.category}"></td>
