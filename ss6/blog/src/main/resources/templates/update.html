@@ -39,10 +39,26 @@
     </div>
     <div class="row">
         <div class="col-3">
+            <h3>Category</h3>
+        </div>
+        <div class="col-6">
+            <input type="text" th:field="*{category.category}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
             <h3>Posts</h3>
         </div>
         <div class="col-6">
             <input type="text" th:field="*{posts}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <h3>Date created</h3>
+        </div>
+        <div class="col-6">
+            <input type="date" th:field="*{dateCreated}">
         </div>
     </div>
     <div class="row">

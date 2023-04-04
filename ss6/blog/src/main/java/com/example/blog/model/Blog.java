@@ -14,18 +14,32 @@ public class Blog {
     private String title;
     @Column(name = "posts", columnDefinition = "text")
     private String posts;
+    @Column(name = "date_created", columnDefinition = "varchar(45)")
+    private String dateCreated;
     @Column(name = "status", columnDefinition = "varchar(50)")
     private String status;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     public Blog() {
     }
 
-    public Blog(Integer id, String author, String title, String posts, String status) {
+    public Blog(Integer id, String author, String title, String posts, String dateCreated, String status) {
         this.id = id;
         this.author = author;
         this.title = title;
         this.posts = posts;
+        this.dateCreated = dateCreated;
         this.status = status;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public Integer getId() {
@@ -58,6 +72,14 @@ public class Blog {
 
     public void setPosts(String posts) {
         this.posts = posts;
+    }
+
+    public String getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(String dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
     public String getStatus() {

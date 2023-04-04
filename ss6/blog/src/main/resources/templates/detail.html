@@ -21,8 +21,16 @@
         <label th:text="${blog.title}"></label>
     </div>
     <div class="detail">
+        <label>Category:</label>
+        <label th:text="${blog.category.category}"></label>
+    </div>
+    <div class="detail">
         <label>Post:</label>
         <label th:text="${blog.posts}"></label>
+    </div>
+    <div class="detail">
+        <label>Date created:</label>
+        <label th:text="${blog.dateCreated}"></label>
     </div>
     <div class="detail">
         <label>Status:</label>

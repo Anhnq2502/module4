@@ -2,6 +2,8 @@ package com.example.blog.controller;
 
 import com.example.blog.model.Blog;
 import com.example.blog.service.IBlogService;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/blog")
 public class BlogController {
-    final
+    private final
     IBlogService iBlogService;
 
     public BlogController(IBlogService iBlogService) {
@@ -17,8 +19,9 @@ public class BlogController {
     }
 
     @GetMapping("")
-    public String list(Model model) {
-        model.addAttribute("blogs", iBlogService.getAll());
+    public String list(Model model, @RequestParam(defaultValue = "0") int page) {
+        Sort sort = Sort.by("dateCreated").descending();
+        model.addAttribute("blogs", iBlogService.getAll(PageRequest.of(page,3, sort)));
         return "/list";
     }
 
@@ -31,7 +34,7 @@ public class BlogController {
     @PostMapping("/create")
     public String create(Model model, Blog blog) {
         model.addAttribute("blog", iBlogService.save(blog));
-        return "/create";
+        return "redirect:/blog";
     }
 
     @GetMapping("/delete")
@@ -56,5 +59,16 @@ public class BlogController {
     public String detail(Model model, @PathVariable Integer id) {
         model.addAttribute("blog", iBlogService.getBlogById(id));
         return "/detail";
+    }
+    @PostMapping("/findByTitle")
+    public String findByTitle(Model model, @RequestParam String title, @RequestParam(defaultValue = "0") int page){
+        Sort sort = Sort.by("dateCreated").descending();
+        model.addAttribute("blog", iBlogService.FindByTitle(title,PageRequest.of(page,2,sort)));
+        return "/list";
+    }
+    @PostMapping("findByCategory")
+    public String findByCategory(Model model, @RequestParam String category,@RequestParam(defaultValue = "0") int page){
+        model.addAttribute("blog",iBlogService.FindByCategory(category,PageRequest.of(page,2)));
+        return "/list";
     }
 }
