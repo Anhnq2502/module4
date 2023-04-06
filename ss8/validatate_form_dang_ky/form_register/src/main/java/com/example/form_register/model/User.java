@@ -11,29 +11,29 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "first_name",columnDefinition = "varchar(50)")
+    @Column(name = "first_name", columnDefinition = "varchar(50)")
     @NotBlank(message = "Họ không được để trống")
-    @Size(min = 5,max = 45,message = "Độ dài chỉ từ 5 đến 45 ký tự")
+    @Size(min = 5, max = 45, message = "Độ dài chỉ từ 5 đến 45 ký tự")
     private String firstName;
-    @Column(name = "last_name",columnDefinition = "varchar(50)")
+    @Column(name = "last_name", columnDefinition = "varchar(50)")
     @NotBlank(message = "Tên không được để trống")
-    @Size(min = 5,max = 45,message = "Độ dài chỉ từ 5 đến 45 ký tự")
+    @Size(min = 5, max = 45, message = "Độ dài chỉ từ 5 đến 45 ký tự")
     private String lastName;
     @Column(name = "age")
-    @Min(value = 18,message = "Tuổi không được nhỏ hơn 18")
+    @Min(value = 18, message = "Tuổi không được nhỏ hơn 18")
     private Integer age;
     @Column(name = "gender")
     private Integer gender;
-    @Column(name = "email",columnDefinition = "varchar(50)")
+    @Column(name = "email", columnDefinition = "varchar(50)")
     @Email(message = "Không đúng định dạng email")
     private String email;
-    @Column(name = "phone",columnDefinition = "varchar(50)")
-    @Size(min = 10,max = 11,message = "Không đúng định dạng số điện thoại")
+    @Column(name = "phone", columnDefinition = "varchar(50)")
+    @Size(min = 10, max = 11, message = "Không đúng định dạng số điện thoại")
     private String phone;
-    @Column(name = "account",columnDefinition = "varchar(50)")
+    @Column(name = "account", columnDefinition = "varchar(50)")
     @NotBlank(message = "Không được để trống tên tài khoản")
     private String account;
-    @Column(name = "password",columnDefinition = "varchar(50)")
+    @Column(name = "password", columnDefinition = "varchar(50)")
     @NotBlank(message = "Không được để trống mật khẩu")
     private String password;
 

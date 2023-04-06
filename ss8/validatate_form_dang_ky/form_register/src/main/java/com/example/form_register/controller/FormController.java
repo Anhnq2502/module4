@@ -17,19 +17,21 @@ import javax.validation.Valid;
 public class FormController {
     @Autowired
     private IUserService iUserService;
+
     @GetMapping("/register")
-    public String register(Model model){
-        model.addAttribute("user",new User());
+    public String register(Model model) {
+        model.addAttribute("user", new User());
         return "/index";
     }
+
     @PostMapping("/checkRegister")
-    public String checkRegister(@Valid @ModelAttribute("user")User user, BindingResult bindingResult,
-                                RedirectAttributes redirect){
-        if (bindingResult.hasFieldErrors()){
+    public String checkRegister(@Valid @ModelAttribute("user") User user, BindingResult bindingResult,
+                                RedirectAttributes redirect) {
+        if (bindingResult.hasFieldErrors()) {
             return "/index";
-        }else {
+        } else {
             iUserService.save(user);
-            redirect.addFlashAttribute("msg","Thêm mới thành công");
+            redirect.addFlashAttribute("msg", "Thêm mới thành công");
             return "redirect:/register";
         }
     }
